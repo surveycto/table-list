@@ -1,0 +1,101 @@
+/*
+    ------------------------
+    Labels and hints
+    ------------------------
+*/
+
+.label {
+    /* add style rules here to change how the label appears */
+    margin: .75rem 0;
+}
+
+.hint {
+    /* add style rules here to change how the hint appears */
+    margin: .5rem 0;
+    color: rgba(0,0,0,.65);
+    font-style: italic;
+}
+
+/* 
+    ------------------------
+    Choices
+    ------------------------
+*/
+
+/* choice spacing for web Collect */
+
+.web-collect .choice-container {
+    margin: .2rem 0;
+}
+.web-collect .choice-container .choice-label {
+    padding: .5rem;
+}
+
+/* choice spacing for Android and iOS Collect */
+
+.android-collect .choice-container,
+.ios-collect .choice-container {
+    margin: .1rem 0;
+}
+.android-collect .choice-container .choice-label,
+.ios-collect .choice-container .choice-label {
+    padding: .9rem 0;
+}
+
+/* choice container layout */
+
+.choice-container {
+    display: flex;
+    align-items: baseline;
+}
+.choice-input {
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+.choice-label {
+    cursor: pointer;
+    flex: 1;
+}
+
+/* disabled fields */
+
+.choice-input:disabled {
+    cursor: default;
+}
+.choice-input:disabled + .choice-label {
+    opacity: .5;
+    cursor: default;
+}
+
+/* choices with images */
+
+.web-collect .choice-label-image {
+    max-width: 100%;
+}
+/* images in choice labels are displayed centered in android and ios collect */
+.android-collect .choice-label,
+.ios-collect .choice-label {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: center;
+}
+.android-collect .choice-label-text,
+.ios-collect .choice-label-text {
+    width: 100%;
+}
+.android-collect .choice-label-image,
+.ios-collect .choice-label-image {
+    max-width: 75%;
+}
+
+
+/* hide SVG symbol definitions */
+.symbol {
+    display: none;
+}
+
+.selected {
+    color:red;
+    background-color: aqua;
+}
