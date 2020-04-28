@@ -3,10 +3,12 @@ var numberOfChoices = choices.length;
 var fieldType = fieldProperties.FIELDTYPE;
 var result;
 var delimiter = getPluginParameter ("delimiter");
+var headers = getPluginParameter("columns");
+var headerArray = headers.split(",");
 
 var style = 'single';
 
-if (fieldType == 'select_one'){
+if (fieldType === 'select_one'){
   style = 'single';
 }
 else {
@@ -19,31 +21,64 @@ for(let i = 0; i < numberOfChoices; i++ ){
   const item = {};
   const choicesLabel = choices[i].CHOICE_LABEL;
   const splitLabel = choicesLabel.split(delimiter);
+  item.check='';
   item.value = choices[i].CHOICE_VALUE;
   if ( splitLabel.length >= 1 ){
     for( var j = 0; j < splitLabel.length; j++){
-      var label = "label"+ j;
+      var label = headerArray[j];
       item [label] = splitLabel[j];
     }
   }
   data.push(item);
 }
 
+//var column;
+
+console.log(data[0]);
+
 var $thead = $('#tableId').find('thead');
 var tr = $("<tr>");
 $thead.append(tr);
 var columns = [];
 $.each(data[0], function(name, value) {
-  var column = {
+  var column  = {
     "data": name,
     "title":name
   };
+  // if(name === 0){
+  //   column = {
+  //     "data": name,
+  //     "title":name,
+  //     "className": 'select-checkbox'
+  //   }
+  // }else{
+  //   column = {
+  //     "data": name,
+  //     "title":name
+  //   }
+  // }
   columns.push(column);
 });
 
 let table = $('#tableId').DataTable({
   data: data,
   columns: columns,
+  columnDefs:[
+    {
+      targets : 0,
+      searchable : false,
+      sortable : false,
+      orderable : false,
+      className: 'select-checkbox',
+      title : " "
+    },
+    {
+    targets : 1,
+    visible : false,
+    searchable : false,
+    sortable : false,
+    orderable : false
+  }],
   info : false,
   paging : false,
   select: {
@@ -51,6 +86,9 @@ let table = $('#tableId').DataTable({
     style : style
   },
   fixedHeader : true,
+  drawCallback : function(settings){
+    $('#tableId tr:eq(0) th:eq(0)').text(" ");
+  }
 });
 
 getSelected();
@@ -79,11 +117,12 @@ function getSelected(){
 }
 
 function setValue(value){
-  if(fieldType == 'select_multiple' && value.length > 1){
-    let answer = value.join(" ");
+  if(fieldType === 'select_multiple' && value.length > 1){
+    const answer = value.join(" ");
     setAnswer(answer);
   }else{
-    setAnswer(value);
+    const answer = value.toString(value);
+    setAnswer(answer);
   }
 }
 

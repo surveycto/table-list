@@ -1,3 +1,7 @@
+#tableId tbody tr {
+    cursor: pointer; 
+}
+
 /*
     ------------------------
     Labels and hints
