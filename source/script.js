@@ -79,6 +79,7 @@ let table = $('#tableId').DataTable({
     sortable : false,
     orderable : false
   }],
+  order : [],
   info : false,
   paging : false,
   select: {
@@ -121,8 +122,10 @@ function setValue(value){
     const answer = value.join(" ");
     setAnswer(answer);
   }else{
-    const answer = value.toString(value);
-    setAnswer(answer);
+    if(value.length === 1){
+      const answer = value.toString(value);
+      setAnswer(answer);
+    }
   }
 }
 
