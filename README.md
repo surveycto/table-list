@@ -7,7 +7,7 @@ This will provide a table view to select_one and select_multiple fields.
 
 This field plug-in allows for data to presented in the form of a table. The data can be pulled in from a static choices, pre-loaded from a CSV file or from an attached dataset. The table further allows for sorting for each column and also searching for across the table.   See the [Parameters section](#parameters) below.
 
-[![Download now](extras/download-button.png)](https://github.com/surveycto/get-ip-address/raw/master/get-ip-address.fieldplugin.zip)
+[![Download now](extras/download-button.png)](https://github.com/surveycto/get-ip-address/raw/master/table-list.fieldplugin.zip)
 
 ## Default SurveyCTO feature support
 
