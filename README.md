@@ -44,6 +44,7 @@ To create your own field plug-in using this as a template, follow these steps:
 > This will be expected to have choices sheet with the following if using static choices;
 
 | **list_name**| **value** | **label** |
+| --- | ---| --- |
 |client_information|client_information|id, name, phone_number|
 
 You can read more about how to use this plugin [here] and see examples [here].
