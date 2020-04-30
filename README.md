@@ -45,7 +45,7 @@ To create your own field plug-in using this as a template, follow these steps:
 
 | **list_name**| **value** | **label** |
 | --- | ---| --- |
-|client_information|client_information|id, name, phone_number|
+|client_information|client_information|id &#124; name &#124; phone_number|
 
 You can read more about how to use this plugin [here] and see examples [here].
 
