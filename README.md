@@ -39,9 +39,9 @@ To create your own field plug-in using this as a template, follow these steps:
 | `delimiter` | Used to set the delimiter used in the choice label column (or column of csv or dataset). |
 | `headers` | A comma separated list of table headers. The number of these should match the expected number of columns in the choice label column (or column of csv or dataset) |
 
-> **Example:**  
-> If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Name, Phone Number")`
-> This will be expected to have choices sheet with the following if using static choices;
+**Example:**  
+If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Name, Phone Number")`
+This will be expected to have choices sheet with the following if using static choices;
 
 | **list_name**| **value** | **label** |
 | --- | ---| --- |
