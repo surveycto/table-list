@@ -9,14 +9,22 @@ var headerArray = headers.split(',') // get individual headers from the headers 
 
 var style = 'single' // set the default style to select one
 
+var data = [] // Array to keep the data for the data table
+
+let ids // Variable to keep track of the selected rows
+
+// Create a placeholder for the table
+var $thead = $('#tableId').find('thead')
+var tr = $('<tr>')
+var columns = [] // Array to store the column headers
+$thead.append(tr)
+
 // check if the field is multi select and set selection to allow selecting multiple fields
 if (fieldType === 'select_one') {
   style = 'single'
 } else {
   style = 'multi'
 }
-
-var data = [] // Array to keep the data for the data table
 
 // Loop through the choices and create key value pairs
 for (let i = 0; i < numberOfChoices; i++) {
@@ -33,12 +41,6 @@ for (let i = 0; i < numberOfChoices; i++) {
   }
   data.push(item)
 }
-
-// Create a placeholder for the table
-var $thead = $('#tableId').find('thead')
-var tr = $('<tr>')
-$thead.append(tr)
-var columns = [] // Array to store the column headers
 
 // Loop through the first and designate these as column headers
 $.each(data[0], function (name, value) {
@@ -84,8 +86,6 @@ const table = $('#tableId').DataTable({
 })
 
 getSelected() // Call method to process selections
-
-let ids // Variable to keep track of the selected rows
 
 function getSelected () {
   table.on('select', function (e, dt, type, indexes) { // On row selection
