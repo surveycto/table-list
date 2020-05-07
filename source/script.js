@@ -1,3 +1,5 @@
+/* global setAnswer, fieldProperties, getPluginParameter, $ */
+
 var choices = fieldProperties.CHOICES // Get the full list of choices available
 var numberOfChoices = choices.length // Count the number of choices for this field
 var fieldType = fieldProperties.FIELDTYPE // Get the type of field (select_one or select_multiple)
