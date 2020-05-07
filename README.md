@@ -5,7 +5,7 @@ This will provide a table view to select_one and select_multiple fields.
 
 ## Description
 
-This field plug-in allows for data to presented in the form of a table. The data can be pulled in from a static choices, pre-loaded from a CSV file or from an attached dataset. The table further allows for sorting for each column and also searching for across the table.   See the [Parameters section](#parameters) below.
+This field plug-in allows for data to presented in the form of a table. The data can be pulled in from static choices, pre-loaded from a CSV file, or from an attached dataset. The table further allows for sorting each column and also searching for across the table. See the [Parameters section](#parameters) below.
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/table-list/raw/master/table-list.fieldplugin.zip)
 
@@ -13,7 +13,7 @@ This field plug-in allows for data to presented in the form of a table. The data
 
 | Feature / Property | Support |
 | --- | --- |
-| Supported field type(s) | `select_one` `select_multiple`|
+| Supported field type(s) | `select_one`, `select_multiple`|
 | Default values | No |
 | Custom constraint message | Yes |
 | Custom required message | Yes |
