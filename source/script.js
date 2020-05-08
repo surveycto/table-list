@@ -26,7 +26,7 @@ for (let i = 0; i < numberOfChoices; i++) {
   itemObject.check = ''
   itemObject.value = choices[i].CHOICE_VALUE
   if (splitLabel.length >= 1) {
-    for (var j = 0; j < splitLabel.length; j++) {
+    for (let j = 0; j < splitLabel.length; j++) {
       var label = headerArray[j]
       itemObject[label] = splitLabel[j]
     }
@@ -83,6 +83,39 @@ const table = $('#tableId').DataTable({
   }
 })
 
+// Hightlight previously selected choices
+for (let n = 0; n < numberOfChoices; n++) {
+  if (choices[n].CHOICE_SELECTED) {
+    console.log("answer is " + choices[n].CHOICE_VALUE)
+    if (fieldType === 'select_one') {
+      const currentAnswer = choices[n].CHOICE_VALUE
+      const names = table.row(function (idx, data, node) {
+        return data.value === currentAnswer ? true : false
+      }).index()
+      console.log('Index in select one is ' + names)
+      table.row(names).nodes().to$().addClass('selected')
+    } else {
+      const currentAnswer = choices[n].CHOICE_VALUE
+      const splitAnswer = currentAnswer.split(' ')
+      if (splitAnswer.length === 1) {
+        const names = table.row(function (idx, data, node) {
+          return data.value === currentAnswer ? true : false
+        }).index()
+        console.log('Index in select multiple A is ' + names)
+        table.row(names).nodes().to$().addClass('selected')
+      } else {
+        for (const j = 0; j <= splitAnswer.length; j++) {
+          const names = table.row(function (idx, data, node) {
+            return data.value === splitAnswer[j] ? true : false
+          }).index()
+          console.log('Index in select one B is ' + names)
+          table.row(names).nodes().to$().addClass('selected')
+        }
+      }
+    }
+  }
+}
+
 getSelected() // Call method to process selections
 
 let ids // Variable to keep track of the selected rows
@@ -94,7 +127,6 @@ function getSelected () {
         return item.value // save the value of the row
       })
     }
-    console.log('ids after selection is ' + ids)
     setValue(ids) // Pass ids to setValue
   })
   table.on('deselect', function (e, dt, type, indexes) {
@@ -103,22 +135,18 @@ function getSelected () {
         return item.value // remove the value of the deselected row
       })
     }
-    console.log('ids after de-selection is ' + ids)
     setValue(ids) // Pass ids to setValue
   })
 }
 
 // Sets the value of selection based on selected rows
 function setValue (value) {
-  console.log('Value passed to setValue is ' + value)
   if (fieldType === 'select_multiple' && value.length > 1) { // check if to expect more than one selection
     const answer = value.join(' ') // Change array into space seperated string
-    console.log('The answer is ' + answer)
     setAnswer(answer) // Set this as the answer for this field
   } else {
     if (value.length === 1) { // Check if only one answer is checked
       const answer = value.toString(value) // Change a array into a string value
-      console.log('The answer is ' + answer)
       setAnswer(answer) // Set this as the answer for the field
     }
   }
