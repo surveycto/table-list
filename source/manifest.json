@@ -1,7 +1,7 @@
 {
 	"name" : "Baseline select_x table-view field",
 	"author" : "Dobility",
-	"version": "1.2.47",
+	"version": "1.2.53",
 	"supportedFieldTypes": ["select_one","select_multiple"],
 	"externalCss" :["bootstrap.min.css","dataTables.bootstrap4.min.css","fixedHeader.bootstrap4.min.css","select.bootstrap4.min.css"],
 	"externalJs" : ["jquery-3.5.0.min.js","popper.min.js","bootstrap.min.js","jquery.dataTables.min.js","dataTables.bootstrap4.min.js","dataTables.fixedHeader.min.js","dataTables.select.min.js"],

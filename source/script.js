@@ -6,32 +6,34 @@ var headers = getPluginParameter('headers') // Get the list of headers entered i
 var headerArray = headers.split(',') // get individual headers from the headers parameter
 
 var style = 'single' // set the default style to select one
-
+var className = 'select-radiobox'
 // check if the field is multi select and set selection to allow selecting multiple fields
 if (fieldType === 'select_one') {
   style = 'single'
+  className = 'select-radiobox'
 } else {
   style = 'multi'
+  className = 'select-checkbox'
 }
 
 var data = [] // Array to keep the data for the data table
 
 // Loop through the choices and create key value pairs
 for (let i = 0; i < numberOfChoices; i++) {
-  const item = {}
+  const itemObject = {}
   const choicesLabel = choices[i].CHOICE_LABEL
   const splitLabel = choicesLabel.split(delimiter)
-  item.check = ''
-  item.value = choices[i].CHOICE_VALUE
+  itemObject.check = ''
+  itemObject.value = choices[i].CHOICE_VALUE
   if (splitLabel.length >= 1) {
     for (var j = 0; j < splitLabel.length; j++) {
       var label = headerArray[j]
-      item[label] = splitLabel[j]
+      itemObject[label] = splitLabel[j]
     }
   }
-  data.push(item)
+  data.push(itemObject)
 }
-
+console.log(data)
 // Create a placeholder for the table
 var $thead = $('#tableId').find('thead')
 var tr = $('<tr>')
@@ -57,7 +59,7 @@ const table = $('#tableId').DataTable({
       searchable: false,
       sortable: false,
       orderable: false,
-      className: 'select-checkbox', // adds checkboxes to the first column
+      className: className, // adds checkboxes to the first column
       title: ' '
     },
     {
@@ -92,7 +94,7 @@ function getSelected () {
         return item.value // save the value of the row
       })
     }
-
+    console.log('ids after selection is ' + ids)
     setValue(ids) // Pass ids to setValue
   })
   table.on('deselect', function (e, dt, type, indexes) {
@@ -101,19 +103,22 @@ function getSelected () {
         return item.value // remove the value of the deselected row
       })
     }
-
+    console.log('ids after de-selection is ' + ids)
     setValue(ids) // Pass ids to setValue
   })
 }
 
 // Sets the value of selection based on selected rows
 function setValue (value) {
+  console.log('Value passed to setValue is ' + value)
   if (fieldType === 'select_multiple' && value.length > 1) { // check if to expect more than one selection
     const answer = value.join(' ') // Change array into space seperated string
+    console.log('The answer is ' + answer)
     setAnswer(answer) // Set this as the answer for this field
   } else {
     if (value.length === 1) { // Check if only one answer is checked
       const answer = value.toString(value) // Change a array into a string value
+      console.log('The answer is ' + answer)
       setAnswer(answer) // Set this as the answer for the field
     }
   }
