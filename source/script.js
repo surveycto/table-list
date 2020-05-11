@@ -83,16 +83,17 @@ const table = $('#tableId').DataTable({
   }
 })
 
+let hasEarlierSelection = false
+
 // Hightlight previously selected choices
 for (let n = 0; n < numberOfChoices; n++) {
   if (choices[n].CHOICE_SELECTED) {
-    console.log("answer is " + choices[n].CHOICE_VALUE)
+    hasEarlierSelection = true
     if (fieldType === 'select_one') {
       const currentAnswer = choices[n].CHOICE_VALUE
       const names = table.row(function (idx, data, node) {
         return data.value === currentAnswer ? true : false
       }).index()
-      console.log('Index in select one is ' + names)
       table.row(names).nodes().to$().addClass('selected')
     } else {
       const currentAnswer = choices[n].CHOICE_VALUE
@@ -101,14 +102,12 @@ for (let n = 0; n < numberOfChoices; n++) {
         const names = table.row(function (idx, data, node) {
           return data.value === currentAnswer ? true : false
         }).index()
-        console.log('Index in select multiple A is ' + names)
         table.row(names).nodes().to$().addClass('selected')
       } else {
-        for (const j = 0; j <= splitAnswer.length; j++) {
+        for (let k = 0; k <= splitAnswer.length; k++) {
           const names = table.row(function (idx, data, node) {
-            return data.value === splitAnswer[j] ? true : false
+            return data.value === splitAnswer[k] ? true : false
           }).index()
-          console.log('Index in select one B is ' + names)
           table.row(names).nodes().to$().addClass('selected')
         }
       }
@@ -122,6 +121,10 @@ let ids // Variable to keep track of the selected rows
 
 function getSelected () {
   table.on('select', function (e, dt, type, indexes) { // On row selection
+    if (hasEarlierSelection) {
+      table.rows('.selected').deselect()
+      hasEarlierSelection = false
+    }
     if (type === 'row') {
       ids = $.map(table.rows({ selected: true }).data(), function (item) {
         return item.value // save the value of the row
