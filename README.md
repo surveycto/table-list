@@ -1,11 +1,10 @@
-# table-list
-This will provide a table view to select_one and select_multiple fields.
+# Table list
 
 ![table-list field plug-in](extras/table-list.jpg)
 
 ## Description
 
-This field plug-in allows for data to presented in the form of a table. The data can be pulled in from a static choices, pre-loaded from a CSV file or from an attached dataset. The table further allows for sorting for each column and also searching for across the table.   See the [Parameters section](#parameters) below.
+This field plug-in allows for choice lists to be presented in the form of a table. The table can be created from correctly formatted static or [pre-loaded choices](https://docs.surveycto.com/02-designing-forms/04-sample-forms/12.search-and-select.html). The table further allows for sorting for each column and also searching for across the table.   See the [Parameters section](#parameters) below.
 
 [![Download now](extras/download-button.png)](https://github.com/surveycto/table-list/raw/master/table-list.fieldplugin.zip)
 
@@ -18,6 +17,8 @@ This field plug-in allows for data to presented in the form of a table. The data
 | Custom constraint message | Yes |
 | Custom required message | Yes |
 | Read only | No |
+
+Using multiple pre-load data columns as labels with the search() function is also not supported. Instead, you will store a delimited table in a single column of pre-load data. See below and the wiki for more
 
 ## How to use
 
@@ -36,12 +37,12 @@ To create your own field plug-in using this as a template, follow these steps:
 
 | **Key** | **Value** |
 | --- | --- |
-| `delimiter` | Used to set the delimiter used in the choice label column (or column of csv or dataset). |
+| `delimiter` | Used to set the delimiter used in the choice label column (or column of pre-loaded data that contains the table). |
 | `headers` | A comma separated list of table headers. The number of these should match the expected number of columns in the choice label column (or column of csv or dataset) |
 
 > **Example:**  
 > If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Name, Phone Number")`
-> This will be expected to have choices sheet with the following if using static choices;
+> the corresponding choice list could look like this:
 
 | **list_name**| **value** | **label** |
 | --- | ---| --- |
