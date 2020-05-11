@@ -34,12 +34,18 @@ Using multiple pre-load data columns as labels with the search() function is als
 | `headers` | A comma separated list of table headers. The number of these should match the expected number of columns in the choice label column (or column of csv or dataset) |
 
 > **Example:**  
-> If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Name, Phone Number")`
+> If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Description, Colour")`
 > the corresponding choice list could look like this:
 
 | **list_name**| **value** | **label** |
 | --- | ---| --- |
-|product|1|ID &#124; Description &#124; Colour|
+|product|1|1 &#124; Digissim &#124; Blue|
+
+> The values in the label column will fall under the columns represented by the values in the headers parameter. This will display the table below.
+
+| ID | Description | Colour |
+| --- | --- | --- |
+| 1 | Digissim | Blue |
 
 You can read more about how to use this plugin [here](link to Wiki).
 
