@@ -22,7 +22,7 @@ Using multiple pre-load data columns as labels with the search() function is als
 
 ## How to use
 
-1. Download the test form [extras/sample-form](https://github.com/surveycto/get-ip-address/raw/master/extras/sample_form/get_ip_address_sample.xlsx) from this repo and upload it to your SurveyCTO server.
+1. Download the test form [extras/sample-form](https://github.com/surveycto/table-list/tree/master/extras/example_form) from this repo and upload it to your SurveyCTO server.
 1. Download the [table-list.fieldplugin.zip](https://github.com/surveycto/table-list/raw/master/table-list.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
 1. Make sure to provide the correct parameters (see below).
 
