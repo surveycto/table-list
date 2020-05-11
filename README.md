@@ -22,16 +22,9 @@ Using multiple pre-load data columns as labels with the search() function is als
 
 ## How to use
 
-**To use this field plug-in as-is**, just download the [table-list.fieldplugin.zip](https://github.com/surveycto/table-list/raw/master/table-list.fieldplugin.zip) file from this repo, and attach it to your form.
-
-To create your own field plug-in using this as a template, follow these steps:
-
-1. Fork this repo
-1. Make changes to the files in the `source` directory.
-    * **Note:** be sure to update the `manifest.json` file as well.
-1. Zip the updated contents of the `source` directory.
-1. Rename the .zip file to *yourpluginname*.fieldplugin.zip (replace *yourpluginname* with the name you want to use for your field plug-in).
-1. You may then attach your new .fieldplugin.zip file to your form as normal.
+1. Download the test form [extras/sample-form](https://github.com/surveycto/get-ip-address/raw/master/extras/sample_form/get_ip_address_sample.xlsx) from this repo and upload it to your SurveyCTO server.
+1. Download the [table-list.fieldplugin.zip](https://github.com/surveycto/table-list/raw/master/table-list.fieldplugin.zip) file from this repo, and attach it to the test form on your SurveyCTO server.
+1. Make sure to provide the correct parameters (see below).
 
 ## Parameters
 
@@ -46,9 +39,9 @@ To create your own field plug-in using this as a template, follow these steps:
 
 | **list_name**| **value** | **label** |
 | --- | ---| --- |
-|client_information|client_information|id &#124; name &#124; phone_number|
+|product|1|ID &#124; Description &#124; Colour|
 
-You can read more about how to use this plugin [here] and see examples [here].
+You can read more about how to use this plugin [here](link to Wiki).
 
 ## More resources
 
@@ -57,3 +50,7 @@ You can find a form definition in this repo here: [extras/sample_form](https://g
 
 * **Developer documentation**  
 More instructions for developing and using field plug-ins can be found here: [https://github.com/surveycto/Field-plug-in-resources](https://github.com/surveycto/Field-plug-in-resources)
+
+* **User documentation**
+How to get started using field plug-ins in your SurveyCTO form.
+(https://docs.surveycto.com/02-designing-forms/03-advanced-topics/06.using-field-plug-ins.html)
