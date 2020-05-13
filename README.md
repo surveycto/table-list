@@ -18,7 +18,7 @@ This field plug-in allows for choice lists to be presented in the form of a tabl
 | Custom required message | Yes |
 | Read only | No |
 
-Using multiple pre-load data columns as labels with the search() function is also not supported. Instead, you will store a delimited table in a single column of pre-load data. See below and the wiki for more
+Using multiple pre-load data columns as labels with the search() function is also not supported. Instead, you will store a delimited table in a single column of pre-load data. See below and the [wiki](https://github.com/surveycto/table-list/wiki/Table-list-view-field-plugin) for more
 
 ## How to use
 
@@ -47,7 +47,7 @@ Using multiple pre-load data columns as labels with the search() function is als
 | --- | --- | --- |
 | 1 | Digissim | Blue |
 
-You can read more about how to use this plugin [here](link to Wiki).
+You can read more about how to use this plugin [here](https://github.com/surveycto/table-list/wiki/Table-list-view-field-plugin).
 
 ## More resources
 
