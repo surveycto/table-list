@@ -59,8 +59,7 @@ const table = $('#tableId').DataTable({
       searchable: false,
       sortable: false,
       orderable: false,
-      className: className, // adds checkboxes to the first column
-      title: ' '
+      className: className // adds checkboxes to the first column
     },
     {
       targets: 1, // targets the second column
@@ -77,11 +76,10 @@ const table = $('#tableId').DataTable({
     style: style // Allow selection based on fieldType (single/multi)
   },
   scrollX: true,
-  fixedHeader: true,
-  drawCallback: function (settings) {
-    $('#tableId tr:eq(0) th:eq(0)').text(' ') // Set header for first column to blank
-  }
+  fixedHeader: true
 })
+
+table.columns(0).header().to$().html(' ') // Set header for first column to blank
 
 let hasEarlierSelection = false
 

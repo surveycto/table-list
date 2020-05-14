@@ -53,7 +53,8 @@ table.dataTable tbody th.select-radiobox:after{display:block;position:absolute;t
 table.dataTable tbody td.select-radiobox:before,
 table.dataTable tbody th.select-radiobox:before{content:' ';margin-top:-6px;margin-left:-6px;border:1px solid black;border-radius:50%}
 table.dataTable tr.selected td.select-radiobox:after,
-table.dataTable tr.selected th.select-radiobox:after{content:'\2B24';margin-top:-11px;margin-left:-6px;text-align:center;text-shadow:1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9}
+table.dataTable tr.selected th.select-radiobox:after{content:' ';background:black;margin-top:-6px;margin-left:-6px;border:1px solid black;border-radius:50%}
+/* table.dataTable tr.selected th.select-radiobox:after{content:' ';margin-top:-12px;margin-left:-6px;text-align:center;width:auto;height:auto;font-size: 16px;}*/
 div.dataTables_wrapper span.select-info,
 div.dataTables_wrapper span.select-item{margin-left:0.5em}@media screen and (max-width: 640px)
 {div.dataTables_wrapper span.select-info,div.dataTables_wrapper span.select-item{margin-left:0;display:block}}
