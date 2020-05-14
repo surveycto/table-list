@@ -47,11 +47,11 @@ Using multiple pre-load data columns as labels with the search() function is als
 | --- | --- | --- |
 | 1 | Digissim | Blue |
 
-You can read more about how to use this plugin [here](https://github.com/surveycto/table-list/wiki/Table-list-view-field-plugin).
+You can read more about how to use this plugin [here](https://github.com/surveycto/table-list/wiki/Table-list-view-field-plugin) (includes a downloadable step-by-step breakdown of using this field plug-in).
 
 ## More resources
 
-* **Test form**  
+* **Sample form**  
 You can find a form definition in this repo here: [extras/sample_form](https://github.com/surveycto/table-list/raw/master/extras/example_form/table-list%20sample%20folder.zip).
 
 * **Developer documentation**  
