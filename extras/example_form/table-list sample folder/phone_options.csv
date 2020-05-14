@@ -1,8 +1,7 @@
-﻿phone_details,Name,Price(US Dollar),Weight,Storage
-Phone 1|199|112g|32GB,Phone 1,199,112g,32GB
-Phone 2|From $399|130g|32GB,Phone 2,From $399,130g,32GB
-Phone 3|From $399|156g|32GB,Phone 3,From $399,156g,32GB
-Phone 4|From $199|158g|32GB,Phone 4,From $199,158g,32GB
-Phone 5|No info|147g|16GB,Phone 5,No info,147g,16GB
-Phone 6|From $150|137.5g|16GB,Phone 6,From $150,137.5g,16GB
-,,,,
+﻿phone_details,name,price_usd,weight,storage,value
+Phone 1|199|112g|32GB,Phone 1,199,112g,32GB,phone_1
+Phone 2|From $399|130g|32GB,Phone 2,From $399,130g,32GB,phone_2
+Phone 3|From $399|156g|32GB,Phone 3,From $399,156g,32GB,phone_3
+Phone 4|From $199|158g|32GB,Phone 4,From $199,158g,32GB,phone_4
+Phone 5|No info|147g|16GB,Phone 5,No info,147g,16GB,phone_5
+Phone 6|From $150|137.5g|16GB,Phone 6,From $150,137.5g,16GB,phone_6
