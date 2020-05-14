@@ -76,7 +76,7 @@ const table = $('#tableId').DataTable({
     items: 'row', // Allow selection by row
     style: style // Allow selection based on fieldType (single/multi)
   },
-  // scrollX: true,
+  scrollX: true,
   fixedHeader: true,
   drawCallback: function (settings) {
     $('#tableId tr:eq(0) th:eq(0)').text(' ') // Set header for first column to blank
