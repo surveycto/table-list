@@ -34,7 +34,7 @@ Using multiple pre-load data columns as labels with the search() function is als
 | `headers` | A comma separated list of table headers. The number of these should match the expected number of columns in the choice label column (or column of csv or dataset) |
 
 > **Example:**  
-> If you have an appearance of `custom-table-list(delimiter="|", headers = "ID, Description, Colour")`
+> If you have an appearance of `custom-table-list(delimiter='|', headers = 'ID, Description, Colour')`
 > the corresponding choice list could look like this:
 
 | **list_name**| **value** | **label** |
