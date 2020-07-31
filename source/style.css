@@ -15,9 +15,9 @@
 
 .hint {
     /* add style rules here to change how the hint appears */
-    margin: .5rem 0;
     color: rgba(0,0,0,.65);
     font-style: italic;
+    margin: .5rem 0;
 }
 
 /* 
@@ -31,6 +31,7 @@
 .web-collect .choice-container {
     margin: .2rem 0;
 }
+
 .web-collect .choice-container .choice-label {
     padding: .5rem;
 }
@@ -49,13 +50,15 @@
 /* choice container layout */
 
 .choice-container {
-    display: flex;
     align-items: baseline;
+    display: flex;
 }
+
 .choice-input {
-    margin: 0 .5rem;
     cursor: pointer;
+    margin: 0 .5rem;
 }
+
 .choice-label {
     cursor: pointer;
     flex: 1;
@@ -66,6 +69,7 @@
 .choice-input:disabled {
     cursor: default;
 }
+
 .choice-input:disabled + .choice-label {
     opacity: .5;
     cursor: default;
@@ -76,23 +80,25 @@
 .web-collect .choice-label-image {
     max-width: 100%;
 }
+
 /* images in choice labels are displayed centered in android and ios collect */
 .android-collect .choice-label,
 .ios-collect .choice-label {
     display: flex;
-    flex-wrap: wrap;
     flex-grow: 1;
+    flex-wrap: wrap;
     justify-content: center;
 }
+
 .android-collect .choice-label-text,
 .ios-collect .choice-label-text {
     width: 100%;
 }
+
 .android-collect .choice-label-image,
 .ios-collect .choice-label-image {
     max-width: 75%;
 }
-
 
 /* hide SVG symbol definitions */
 .symbol {
