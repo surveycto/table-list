@@ -35,7 +35,7 @@ for (let i = 0; i < numberOfChoices; i++) {
   }
   data.push(itemObject)
 }
-console.log(data)
+
 // Create a placeholder for the table
 var $thead = $('#tableId').find('thead')
 var tr = $('<tr>')
@@ -83,18 +83,15 @@ const table = $('#tableId').DataTable({
 
 table.columns(0).header().to$().html(' ') // Set header for first column to blank
 
-let hasEarlierSelection = false
-
 // Hightlight previously selected choices
 for (let n = 0; n < numberOfChoices; n++) {
   if (choices[n].CHOICE_SELECTED) {
-    hasEarlierSelection = true
     if (fieldType === 'select_one') {
       const currentAnswer = choices[n].CHOICE_VALUE
       const names = table.row(function (idx, data, node) {
         return data.value === currentAnswer ? true : false
       }).index()
-      table.row(names).nodes().to$().addClass('selected')
+      table.row(names).select()
     } else {
       const currentAnswer = choices[n].CHOICE_VALUE
       const splitAnswer = currentAnswer.split(' ')
@@ -102,13 +99,13 @@ for (let n = 0; n < numberOfChoices; n++) {
         const names = table.row(function (idx, data, node) {
           return data.value === currentAnswer ? true : false
         }).index()
-        table.row(names).nodes().to$().addClass('selected')
+        table.row(names).select()
       } else {
         for (let k = 0; k <= splitAnswer.length; k++) {
           const names = table.row(function (idx, data, node) {
             return data.value === splitAnswer[k] ? true : false
           }).index()
-          table.row(names).nodes().to$().addClass('selected')
+          table.row(names).select()
         }
       }
     }
@@ -121,10 +118,6 @@ let ids // Variable to keep track of the selected rows
 
 function getSelected () {
   table.on('select', function (e, dt, type, indexes) { // On row selection
-    if (hasEarlierSelection) {
-      table.rows('.selected').deselect()
-      hasEarlierSelection = false
-    }
     if (type === 'row') {
       ids = $.map(table.rows({ selected: true }).data(), function (item) {
         return item.value // save the value of the row
