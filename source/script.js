@@ -140,10 +140,12 @@ function setValue (value) {
   if (fieldType === 'select_multiple' && value.length > 1) { // check if to expect more than one selection
     const answer = value.join(' ') // Change array into space seperated string
     setAnswer(answer) // Set this as the answer for this field
-  } else {
+  } else if (fieldType === 'select_one') {
     if (value.length === 1) { // Check if only one answer is checked
-      const answer = value.toString(value) // Change a array into a string value
-      setAnswer(answer) // Set this as the answer for the field
+      const answer = value.toString(); // Change an array into a string value
+      setAnswer(answer); // Set this as the answer for the field
+    } else if (value.length === 0) { // No selection made
+      setAnswer(''); // Clear the answer for this field
     }
   }
 }
